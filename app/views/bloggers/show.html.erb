@@ -1,0 +1,10 @@
+<h1> <%= @blogger.name %> </h1>
+
+<h4> Total Likes: <%= @blogger.posts.sum(:likes)%> </h4>
+
+<% if @blogger.featured_post%>
+<%= link_to @blogger.featured_post.title, posts_path(@blogger.featured_post) %>
+<%else%>
+<p> blogger has no posts </p>
+<%end%>
+
