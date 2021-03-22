@@ -1,0 +1,11 @@
+<h1>Make a post!</h1>
+
+<%= form_for @post do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :content %>
+    <%= f.text_field :content %>
+    <%= f.collection_select :blogger_id, Blogger.order(:name), :id, :name %>
+    <%= f.collection_select :destination_id, Destination.order(:name), :id, :name %>
+    <%= f.submit %>
+    <% end %>
